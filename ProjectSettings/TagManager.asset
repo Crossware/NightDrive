@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Projectile
   - TutorialRequirement
+  - Gas
+  - Wrench
+  - Car
   layers:
   - Default
   - TransparentFX
@@ -15,13 +18,13 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Cars
   - Player
   - Hazard
   - Environment
   - ConnectivityReceptor
   - ConnectivityConnector
-  - 
+  - Collectables
   - 
   - 
   - 

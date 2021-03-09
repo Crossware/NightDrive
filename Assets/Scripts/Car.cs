@@ -8,7 +8,6 @@ interface Car
     bool deleted { get; set; }
 
     void spawn();
-    void spawn(Vector3 position);
-    void despawn();
+    void respawn(Vector3 position);
     void update();
 }

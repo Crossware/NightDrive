@@ -17,29 +17,28 @@ public class FastCar : MonoBehaviour, Car
         this.Speed = speed;
     }
 
+    public FastCar(GameObject car, Vector3 spawnPosition, float despawnPosition, float speed){
+        this.Position = spawnPosition;
+        this.DespawnPosititon = despawnPosition;
+        this.Speed = speed;
+        this.carObject = car;
+    }
+
     public void spawn(){
-        carObject = Instantiate(GameObject.Find("4x4 pickup")) as GameObject;
         carObject.transform.position = Position;
     }
 
-    public void spawn(Vector3 position){
-        //carObject = Instantiate(GameObject.Find("4x4 pickup")) as GameObject;
+    public void respawn(Vector3 position){
         carObject.transform.position = position;
-    }
-
-    public void despawn(){
-        Destroy(carObject);
+        carObject.GetComponent<Collider>().enabled = true;
     }
 
     public void update(){
-        //Debug.Log("Car object: " + carObject);
         Vector3 currentPosition = carObject.transform.position;
         currentPosition.z -= Speed;
         carObject.transform.position = currentPosition;
-        if (currentPosition.z < DespawnPosititon)
-        {
-            //Debug.Log("Position Z: " + Position.z);
-            spawn(Position);
+        if (currentPosition.z < DespawnPosititon){
+            respawn(Position);
         }
     }
 }
