@@ -6,7 +6,7 @@ namespace Unity.LEGO.UI
 {
     public class LoadSceneButton : MonoBehaviour
     {
-        private string sceneName = "Night Drive";
+        public string sceneName = "";
 
         public void LoadScene()
         {
