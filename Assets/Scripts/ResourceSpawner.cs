@@ -18,14 +18,14 @@ public class ResourceSpawner : MonoBehaviour
     private Vector3 retirePosition = new Vector3(-30.0f, 0.0f, -425.0f);
     private List<Vector3> startPositions = new List<Vector3>();
     private float despawnPosition = -153.0f;
-    private float minSpawnGap = 5.0f;
+    private float minSpawnGap = 0.0f;
     private float activeSpawnGap = 0.0f;
 
     // Start is called before the first frame update
     void Start(){
         startPositions.Add(leftLanePosition);
-        startPositions.Add(middleLanePosition);
         startPositions.Add(rightLanePosition);
+        startPositions.Add(middleLanePosition);
 
         gasCan = GameObject.Find("Gas");
         wrench = GameObject.Find("Wrench");
@@ -39,7 +39,7 @@ public class ResourceSpawner : MonoBehaviour
         //Debug.Log("Active Objects: " + activeObjects.Count);
         if(activeSpawnGap > minSpawnGap){
             if (activeObjects.Count < activeNumber){
-                int lane = Random.Range(0, 2);
+                int lane = Random.Range(0, 3);
                 spawn(objects[getNumber(0, 10)], startPositions[lane]);
             }
         }
@@ -56,7 +56,7 @@ public class ResourceSpawner : MonoBehaviour
 
     int getNumber(int min, int max){
         int objectNumber = Random.Range(min, max);
-        if(objectNumber < max / 2){
+        if(objectNumber < max / 1.5){
             return 0;
         }
         else{
@@ -67,7 +67,7 @@ public class ResourceSpawner : MonoBehaviour
     void respawn(GameObject objectToRetire, GameObject newObject){
         objectToRetire.transform.position = retirePosition;
         activeObjects.Remove(objectToRetire);
-        int lane = Random.Range(0, 2);
+        int lane = Random.Range(0, 3);
         newObject.SetActive(true);
         newObject.GetComponent<Collider>().enabled = true;
         newObject.transform.position = startPositions[lane];

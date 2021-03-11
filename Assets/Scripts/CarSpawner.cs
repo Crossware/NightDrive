@@ -22,9 +22,9 @@ public class CarSpawner : MonoBehaviour{
     private List<GameObject> middleLanePool = new List<GameObject>();
     private List<GameObject> rightLanePool = new List<GameObject>();
 
-    private Vector3 leftLanePosition = new Vector3(-15.0f, 0.10f, 459.0f);
-    private Vector3 middleLanePosition = new Vector3(0.0f, 0.10f, 459.0f);
-    private Vector3 rightLanePosition = new Vector3(15.0f, 0.10f, 459.0f);
+    private Vector3 leftLanePosition = new Vector3(-19.5f, 0.10f, 459.0f);
+    private Vector3 middleLanePosition = new Vector3(-1.0f, 0.10f, 459.0f);
+    private Vector3 rightLanePosition = new Vector3(18.0f, 0.10f, 459.0f);
 
     private float leftLaneSpeed = 1.0f;
     private float middleLaneSpeed = 0.5f;
@@ -39,12 +39,11 @@ public class CarSpawner : MonoBehaviour{
     private double rightLaneGap = 20;
     private double minRightLaneGap = 25;
 
-    private List<Vector3> startPositions = new List<Vector3>();
     private float despawnPosition = -153.0f;
 
     // Start is called before the first frame update
     void Start(){
-        GameObject leftCar = GameObject.Find("4x4 pickup");
+        GameObject leftCar = GameObject.Find("4x4");
         GameObject middleCar = GameObject.Find("Bus");
         GameObject rightCar = GameObject.Find("Red 18 Wheeler");
 
@@ -52,12 +51,10 @@ public class CarSpawner : MonoBehaviour{
         leftLanePool.Add(GameObject.Find("Red Truck"));
 
         middleLanePool.Add(middleCar);
-        middleLanePool.Add(GameObject.Find("4x4 pickup (1)"));
+        middleLanePool.Add(GameObject.Find("4x4 (1)"));
 
         rightLanePool.Add(rightCar);
-        rightLanePool.Add(GameObject.Find("4x4 pickup (2)"));
-
-        int totalNumberOfCars = numberOfLanes * maxCarsPerLane;
+        rightLanePool.Add(GameObject.Find("4x4 (2)"));
       
         Car car1 = new SlowCar(leftCar, leftLanePosition, despawnPosition, leftLaneSpeed);
         car1.spawn();
