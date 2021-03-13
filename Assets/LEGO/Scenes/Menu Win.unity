@@ -1612,7 +1612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e31e3f1566f61d44bea26a24d542640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allHighScores: {fileID: 0}
+  allHighScores: {fileID: 1303220829}
   loseScoreInfo: {fileID: 0}
   newHighScoreInfo: {fileID: 0}
   inputField: {fileID: 0}
