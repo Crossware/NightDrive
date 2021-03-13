@@ -30,7 +30,7 @@ public class ResourceSpawner : MonoBehaviour
 
         gasCan = GameObject.Find("Gas");
         wrench = GameObject.Find("Wrench");
-        reverser = GameObject.Find("New Reverse Control");
+        reverser = GameObject.Find("Reverse Control");
         objects.Add(gasCan);
         objects.Add(wrench);
         objects.Add(reverser);

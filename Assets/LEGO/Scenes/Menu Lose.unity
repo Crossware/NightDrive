@@ -1395,13 +1395,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294462103}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e31e3f1566f61d44bea26a24d542640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highScores: {fileID: 0}
-  scoreInfo: {fileID: 2043687228}
+  allHighScores: {fileID: 0}
+  loseScoreInfo: {fileID: 2043687228}
+  newHighScoreInfo: {fileID: 573982306828176232}
   inputField: {fileID: 907117099}
   baseScoreInfo: {fileID: 2043687226}
   highScorePanel: {fileID: 262916757}
@@ -2361,6 +2362,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b94960c83fcc6e4f92b428998fdef6d, type: 3}
+--- !u!114 &573982306828176232 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 573982306245088107, guid: 4b94960c83fcc6e4f92b428998fdef6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 573982306828176231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4163614416454261361 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4163614417313376617, guid: 6b23e1fc73ddf414eb915223522f6e6c,
