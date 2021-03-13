@@ -6,6 +6,7 @@ public class ResourceSpawner : MonoBehaviour
 {
     private GameObject gasCan;
     private GameObject wrench;
+    private GameObject reverser;
 
     private int activeNumber = 1;
     private List<GameObject> objects = new List<GameObject>();
@@ -29,8 +30,10 @@ public class ResourceSpawner : MonoBehaviour
 
         gasCan = GameObject.Find("Gas");
         wrench = GameObject.Find("Wrench");
+        reverser = GameObject.Find("New Reverse Control");
         objects.Add(gasCan);
         objects.Add(wrench);
+        objects.Add(reverser);
     }
 
     // Update is called once per frame
@@ -40,7 +43,7 @@ public class ResourceSpawner : MonoBehaviour
         if(activeSpawnGap > minSpawnGap){
             if (activeObjects.Count < activeNumber){
                 int lane = Random.Range(0, 3);
-                spawn(objects[getNumber(0, 10)], startPositions[lane]);
+                spawn(objects[getNumber(0, 11)], startPositions[lane]);
             }
         }
         
@@ -56,11 +59,16 @@ public class ResourceSpawner : MonoBehaviour
 
     int getNumber(int min, int max){
         int objectNumber = Random.Range(min, max);
-        if(objectNumber < max / 1.5){
+        if(objectNumber < max / 2){
             return 0;
         }
         else{
-            return 1;
+            int random = Random.Range(0, 10);
+            Debug.Log("Random: " + random);
+            if (random < max / 2){
+                return 1;
+            }
+            return 2;
         }
     }
 

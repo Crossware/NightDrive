@@ -17,11 +17,11 @@ public class RoadSpawner : MonoBehaviour
         for (int i = 0; i < 4; i++){
             decimal listPos = i;
             if (listPos / 2 == 0 || listPos / 2 == 1){
-                Debug.Log("0 or 1");
+                //Debug.Log("0 or 1");
                 yOffset = 0.01f;
             }
             else{
-                Debug.Log("other");
+                //Debug.Log("other");
                 yOffset = -0.01f;
             }
             GameObject road = Instantiate(roadObject) as GameObject;
@@ -42,11 +42,11 @@ public class RoadSpawner : MonoBehaviour
             if (obj.transform.position.z <= -roadTileSize){
                 decimal listPos = objectList.IndexOf(obj);
                 if (listPos / 2 == 0 || listPos / 2 == 1){
-                    Debug.Log("0 or 1");
+                    //Debug.Log("0 or 1");
                     yOffset = 0.01f;
                 }
                 else{
-                    Debug.Log("other");
+                    //Debug.Log("other");
                     yOffset = -0.01f;
                 }
                 Vector3 positionWithOffset = new Vector3(topPosition.x, topPosition.y + yOffset, topPosition.z);
